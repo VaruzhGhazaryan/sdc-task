@@ -5,8 +5,8 @@
 @import "./media";
 
 @include mat.core();
-//@include mat.all-component-themes(theme.$app-dark-theme);
-@include mat.all-component-themes(theme.$app-light-theme);
+@include mat.all-component-themes(theme.$app-dark-theme);
+//@include mat.all-component-themes(theme.$app-light-theme);
 
 .container {
   width: 100%;

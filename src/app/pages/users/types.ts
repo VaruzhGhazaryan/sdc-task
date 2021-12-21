@@ -4,8 +4,8 @@ import { EntityState } from '@ngrx/entity';
 export enum CallState {
   Init = 'INIT',
   Loading = 'LOADING',
-  LOADED = 'LOADED',
-  ERROR = 'ERROR'
+  Loaded = 'LOADED',
+  Error = 'ERROR'
 }
 
 export interface UserState {

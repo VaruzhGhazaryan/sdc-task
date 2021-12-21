@@ -9,7 +9,7 @@ import { catchError, map, Observable, of } from 'rxjs';
 })
 export class UserService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor() { }
 
   getMappedUserData(): Observable<UserDataMappedResult> {
     return this.getUserData().pipe(

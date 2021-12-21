@@ -1,4 +1,19 @@
 <div class="container">
   <h2>Users List</h2>
-  ghjh
+  <ng-template [ngIf]="loading$ | async" [ngIfThen]="loadingTmp"></ng-template>
+  <ng-template [ngIf]="error$ | async" [ngIfThen]="errorTmp"></ng-template>
+  <ng-template [ngIf]="loaded$ | async" [ngIfThen]="contentTmp"></ng-template>
 </div>
+
+<ng-template #contentTmp>
+  <app-list-view
+    [links]="links$ | async"
+    [userEntities]="userEntities$ | async">
+  </app-list-view>
+</ng-template>
+
+<ng-template #loadingTmp>Loading...</ng-template>
+<ng-template #errorTmp>
+  <p>Something went wrong..</p>
+  <p>You can try <a (click)="load()">reload</a> data.</p>
+</ng-template>
