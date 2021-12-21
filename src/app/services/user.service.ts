@@ -1,8 +1,12 @@
+// Angular
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+// Third Part
+import { catchError, map, Observable, of } from 'rxjs';
+
+// App shared
 import { UserData } from '@app/mocks';
 import { UserJsonData, UserDataMappedResult } from '@app/types';
-import { catchError, map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +22,10 @@ export class UserService {
     )
   }
 
+  /**
+   * later it can be easily replaced with xhr request,
+   * uses HttpClient service.
+   */
   private getUserData(): Observable<UserJsonData[]>{
     return of(UserData);
   }

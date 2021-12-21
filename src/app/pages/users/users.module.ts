@@ -1,12 +1,15 @@
+// Angular modules.
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UsersRoutingModule } from './users-routing.module';
-import { UsersComponent } from './users.component';
-import { ListViewComponent } from './list-view/list-view.component';
+// Angular Material modules.
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
 
+// Feature specific modules.
+import { UsersComponent } from './users.component';
+import { UsersRoutingModule } from './users-routing.module';
+import { ListViewComponent } from './list-view/list-view.component';
 
 @NgModule({
   declarations: [
@@ -15,9 +18,9 @@ import { MatSortModule } from "@angular/material/sort";
   ],
   imports: [
     CommonModule,
+    UsersRoutingModule,
     MatSortModule,
     MatTableModule,
-    UsersRoutingModule
   ]
 })
 export class UsersModule { }
