@@ -1,0 +1,24 @@
+// Custom Theming for Angular Material
+@use 'node_modules/@angular/material' as mat;
+@use 'theme' as theme;
+
+@import "./media";
+
+@include mat.core();
+//@include mat.all-component-themes(theme.$app-dark-theme);
+@include mat.all-component-themes(theme.$app-light-theme);
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  @include media('<desktop') {
+    width: 100%;
+    padding: 0;
+  }
+
+  @include media('>=desktop') {
+    width: 1080px;
+    padding: 0;
+  }
+}
