@@ -13,3 +13,7 @@ export interface UserState {
   links: U2ULink[];
   users: EntityState<User>
 }
+
+export interface FilterEvent {
+  filter: string;
+}

@@ -1,0 +1,24 @@
+mat-form-field {
+  &.small-input {
+    &.mat-form-field-appearance-outline {
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+
+      .mat-form-field-infix {
+        padding: .25em 0 .75em 0;
+        font-size: 14px;
+
+        .mat-select-arrow{
+          margin-top: 10px;
+        }
+      }
+
+      .mat-select-empty + .mat-form-field-label-wrapper {
+        .mat-form-field-label{
+          margin-top: -0.75em;
+        }
+      }
+    }
+  }
+}

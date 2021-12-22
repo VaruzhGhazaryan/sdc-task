@@ -6,8 +6,12 @@
 </div>
 
 <ng-template #contentTmp>
+  <app-filters
+    (changed)="applyFilterChanges($event)"
+  ></app-filters>
   <app-list-view
     [links]="links$ | async"
+    [filters]="filters$ | async"
     [userEntities]="userEntities$ | async">
   </app-list-view>
 </ng-template>

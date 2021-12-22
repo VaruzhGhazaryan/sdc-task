@@ -3,6 +3,7 @@
 @use 'theme' as theme;
 
 @import "./media";
+@import "./input";
 
 @include mat.core();
 @include mat.all-component-themes(theme.$app-dark-theme);

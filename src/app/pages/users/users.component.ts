@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersStoreService } from "./users.store.service";
+import { BehaviorSubject, filter, withLatestFrom } from 'rxjs';
+import { FilterEvent } from '@app/pages/users/types';
 
 @Component({
   selector: 'app-users',
@@ -16,6 +18,8 @@ export class UsersComponent implements OnInit {
   loaded$ = this.store.loaded$;
   loading$ = this.store.loading$;
 
+  filters$ = new BehaviorSubject<FilterEvent>({ filter: '' });
+
   constructor(private store: UsersStoreService) { }
 
   ngOnInit(): void {
@@ -24,6 +28,10 @@ export class UsersComponent implements OnInit {
 
   load() {
     this.store.load();
+  }
+
+  applyFilterChanges(event: FilterEvent) {
+    this.filters$.next(event)
   }
 
 }
